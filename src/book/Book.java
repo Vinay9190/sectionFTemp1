@@ -8,12 +8,17 @@ public class Book {
     public String getBookName() {
         return bookName;
     }
+    public void setBookName() {
+        this.bookName = bookName;
+    }
     public String getAuthorName() {
         return bookName;
     }
+
     public int getIsbn() {
         return isbn;
     }
+
 }
 
 
