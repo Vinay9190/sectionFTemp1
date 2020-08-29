@@ -32,5 +32,12 @@ public class Student {
     public void setNameOfBooksStudentIssued(String[] nameOfBooksStudentIssued) {
         this.nameOfBooksStudentIssued = nameOfBooksStudentIssued;
     }
+    public Student(String studentName,long universityRollNo, String[] nameOfBooksStudentIssued, int noOfBooksStudentIssued) {
+        this.studentName = studentName;
+        this.noOfBooksStudentIssued = noOfBooksStudentIssued;
+        this.nameOfBooksStudentIssued = nameOfBooksStudentIssued;
+        this.universityRollNo = universityRollNo;
+    }
+
 }
 
