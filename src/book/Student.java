@@ -1,5 +1,8 @@
 package book;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Student {
     private String studentName;
     private long universityRollNo;
@@ -39,5 +42,32 @@ public class Student {
         this.universityRollNo = universityRollNo;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentName='" + studentName + '\'' +
+                ", universityRollNo=" + universityRollNo +
+                ", nameOfBooksStudentIssued=" + Arrays.toString(nameOfBooksStudentIssued) +
+                ", noOfBooksStudentIssued=" + noOfBooksStudentIssued +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student)) return false;
+        Student student = (Student) o;
+        return getUniversityRollNo() == student.getUniversityRollNo() &&
+                noOfBooksStudentIssued == student.noOfBooksStudentIssued &&
+                Objects.equals(getStudentName(), student.getStudentName()) &&
+                Arrays.equals(getNameOfBooksStudentIssued(), student.getNameOfBooksStudentIssued());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(getStudentName(), getUniversityRollNo(), noOfBooksStudentIssued);
+        result = 31 * result + Arrays.hashCode(getNameOfBooksStudentIssued());
+        return result;
+    }
 }
 
