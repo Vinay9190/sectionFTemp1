@@ -6,5 +6,5 @@ public class Student {
     private String lastNameOfStudent;
     private long universityRollNo;
     private int noOfBookStudentIssued;
-    private Student nameOfBookStudentIssued[];
+
 }
