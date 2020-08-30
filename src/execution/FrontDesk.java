@@ -4,7 +4,7 @@
  * */
 package execution;
 
-import book.Book;
+
 import book.Library;
 
 import java.util.Scanner;
@@ -30,8 +30,9 @@ public class FrontDesk {
             do {
                 switch (studentInput) {
                     case ISSUE_NEW_BOOK:
-                        scanner.nextLine();
                         System.out.println(" Enter the Name of Book you want to issue ");
+                        scanner.nextLine();
+                        mylibrary.getAvailableBook();
                     case RETURN_PREVIOUS_ISSUE_BOOK:
                         System.out.println("Enter the Name of Book to return previous issue book");
                         break;

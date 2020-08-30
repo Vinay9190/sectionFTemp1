@@ -7,9 +7,11 @@ package book;
 import java.util.Objects;
 
 public class Book {
-    private int thirteenDigitISBNBookNumber;
+    private String thirteenDigitISBNBookNumber;
     private String bookName;
     private String authorName;
+
+
 
     public String getBookName() {
         return bookName;
@@ -23,17 +25,21 @@ public class Book {
     public void setAuthorName(String authorName) {
         this.authorName = authorName;
     }
-    public int getThirteenDigitISBNBookNumber() {
+    public String getThirteenDigitISBNBookNumber() {
         return thirteenDigitISBNBookNumber;
     }
-    public void setThirteenDigitISBNBookNumber(int thirteenDigitISBNBookNumber) {
+    public void setThirteenDigitISBNBookNumber(String thirteenDigitISBNBookNumber) {
         this.thirteenDigitISBNBookNumber = thirteenDigitISBNBookNumber;
     }
-
     public Book(String authorName) {
-        this.authorName = authorName;
+        this.bookName = "Mahabharat";
     }
-    public Book(String authorName, String bookName, int thirteenDigitISBNBookNumber) {
+    public Book() {
+        this.authorName = "Ravi sankar";
+        this.bookName = "Mahabharat";
+        this.thirteenDigitISBNBookNumber = "890OPI987P43P";
+    }
+    public Book(String authorName, String bookName, String thirteenDigitISBNBookNumber) {
         this.authorName = authorName;
         this.bookName = bookName;
         this.thirteenDigitISBNBookNumber = thirteenDigitISBNBookNumber;
