@@ -6,6 +6,8 @@
 package book;
 
 import java.util.Arrays;
+import book.Student;
+import book.Book;
 
 public class Library {
     private Book[] availableBook;
