@@ -32,9 +32,6 @@ public class Book {
         this.thirteenDigitISBNBookNumber = thirteenDigitISBNBookNumber;
     }
     public Book(String authorName) {
-        this.bookName = "Mahabharat";
-    }
-    public Book() {
         this.authorName = "Ravi sankar";
         this.bookName = "Mahabharat";
         this.thirteenDigitISBNBookNumber = "890OPI987P43P";
