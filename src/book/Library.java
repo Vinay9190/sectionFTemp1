@@ -1,7 +1,5 @@
 /*  Created by IntelliJ IDEA.
  *  User: Vinay Yadav
- *  Date: 22/08/20
- *  Time: 1:16 PM
  *  File Name : Library.java
  * */
 
@@ -10,12 +8,19 @@ package book;
 import java.util.Arrays;
 
 public class Library {
-    Library[] availableBook;
+    private Book[] availableBook;
 
-    Library(Library[] avilableBooks) {
+    public Library() {
+        this.availableBook = new Book[5];
+        for (int index = 0; index < availableBook.length; index++) {
+            availableBook[index] = new Book(" availableBooks "+ (index+ 1));
+        }
+    }
+
+    public Library(Book[] avilableBooks) {
         this.availableBook = availableBook;
     }
-    public Library[] getAvailableBook() {
+    public Book[] getAvailableBook() {
         return availableBook;
     }
     public void setAvailableBook() {
@@ -32,7 +37,7 @@ public class Library {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Library)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Library library = (Library) o;
         return Arrays.equals(getAvailableBook(), library.getAvailableBook());
     }
@@ -42,3 +47,4 @@ public class Library {
         return Arrays.hashCode(getAvailableBook());
     }
 }
+

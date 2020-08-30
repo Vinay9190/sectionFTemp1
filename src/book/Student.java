@@ -1,8 +1,6 @@
 /*  Created by IntelliJ IDEA.
  *  User: Vinay Yadav
- *  Date: 22/08/20
- *  Time: 1:16 PM
- *  File Name : Library.java
+ *  File Name : Student.java
  * */
 package book;
 
@@ -10,19 +8,62 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Student {
-    private String studentName;
+    private String studentFirstName, studentMiddleName, studentLastName;
     private long universityRollNo;
-    private String nameOfBooksStudentIssued[] = new String[] {};
+    private Book[] nameOfIssuedBook;
     private int noOfBooksStudentIssued;
 
-    public String getStudentName() {
-        return studentName;
+    public Student() {
+        studentFirstName = "Vinay";
+        studentMiddleName = "Kumar";
+        studentLastName = "Yadav";
+        universityRollNo = 191500906;
+        this.nameOfIssuedBook = new Book[3];
+        noOfBooksStudentIssued = 3;
+        for (int i = 0; i < nameOfIssuedBook.length; i++) {
+            nameOfIssuedBook[i] = new Book("nameofIssuedBook " + (i + 1));
+        }
     }
+
+    public Student(String studentFirstName, String studentMiddleName, String studentLastName, long universityRollNo, Book[] nameOfIssuedBook, int noOfBooksStudentIssued) {
+        this.studentFirstName = studentFirstName;
+        this.studentMiddleName = studentMiddleName;
+        this.studentLastName = studentLastName;
+        this.universityRollNo = universityRollNo;
+        this.nameOfIssuedBook = new Book[3];
+        this.noOfBooksStudentIssued = noOfBooksStudentIssued;
+        for (int index = 0; index < nameOfIssuedBook.length; index++) {
+            nameOfIssuedBook[index] = new Book("nameOfIssuedBook " + (index + 1));
+        }
+    }
+
+
+    public String getStudentFirstName() {
+        return studentFirstName;
+    }
+
     public void setStudentName() {
-        this.studentName = studentName;
+        this.studentFirstName = studentFirstName;
     }
+
+    public String getStudentMiddleName() {
+        return studentMiddleName;
+    }
+
+    public void setStudentMiddleName() {
+        this.studentMiddleName = studentMiddleName;
+    }
+
+    public String getStudentLastName() {
+        return studentLastName;
+    }
+
+    public void setStudentLastName() {
+        this.studentLastName = studentLastName;
+    }
+
     public long getUniversityRollNo() {
-        return  universityRollNo;
+        return universityRollNo;
     }
 
     public void setUniversityRollNo() {
@@ -30,30 +71,29 @@ public class Student {
     }
 
     public int getNoOfBookStudentIssued() {
-         return noOfBooksStudentIssued;
+        return noOfBooksStudentIssued;
     }
+
     public void setNoOfBooksStudentIssued() {
-    this.nameOfBooksStudentIssued = nameOfBooksStudentIssued;
-    }
-    public String[] getNameOfBooksStudentIssued() {
-        return nameOfBooksStudentIssued;
-    }
-    public void setNameOfBooksStudentIssued(String[] nameOfBooksStudentIssued) {
-        this.nameOfBooksStudentIssued = nameOfBooksStudentIssued;
-    }
-    public Student(String studentName,long universityRollNo, String[] nameOfBooksStudentIssued, int noOfBooksStudentIssued) {
-        this.studentName = studentName;
         this.noOfBooksStudentIssued = noOfBooksStudentIssued;
-        this.nameOfBooksStudentIssued = nameOfBooksStudentIssued;
-        this.universityRollNo = universityRollNo;
+    }
+
+    public Book[] getNameOfBooksStudentIssed() {
+        return this.nameOfIssuedBook;
+    }
+
+    public void setNameOfBooksStudentIssued() {
+        this.nameOfIssuedBook = nameOfIssuedBook;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "studentName='" + studentName + '\'' +
+                "studentFirstName='" + studentFirstName + '\'' +
+                ", studentMiddleName='" + studentMiddleName + '\'' +
+                ", studentLastName='" + studentLastName + '\'' +
                 ", universityRollNo=" + universityRollNo +
-                ", nameOfBooksStudentIssued=" + Arrays.toString(nameOfBooksStudentIssued) +
+                ", nameOfIssuedBook=" + Arrays.toString(nameOfIssuedBook) +
                 ", noOfBooksStudentIssued=" + noOfBooksStudentIssued +
                 '}';
     }
@@ -61,18 +101,20 @@ public class Student {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Student)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
         return getUniversityRollNo() == student.getUniversityRollNo() &&
                 noOfBooksStudentIssued == student.noOfBooksStudentIssued &&
-                Objects.equals(getStudentName(), student.getStudentName()) &&
-                Arrays.equals(getNameOfBooksStudentIssued(), student.getNameOfBooksStudentIssued());
+                Objects.equals(getStudentFirstName(), student.getStudentFirstName()) &&
+                Objects.equals(getStudentMiddleName(), student.getStudentMiddleName()) &&
+                Objects.equals(getStudentLastName(), student.getStudentLastName()) &&
+                Arrays.equals(nameOfIssuedBook, student.nameOfIssuedBook);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(getStudentName(), getUniversityRollNo(), noOfBooksStudentIssued);
-        result = 31 * result + Arrays.hashCode(getNameOfBooksStudentIssued());
+        int result = Objects.hash(getStudentFirstName(), getStudentMiddleName(), getStudentLastName(), getUniversityRollNo(), noOfBooksStudentIssued);
+        result = 31 * result + Arrays.hashCode(nameOfIssuedBook);
         return result;
     }
 }

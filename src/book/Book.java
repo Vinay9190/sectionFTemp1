@@ -1,15 +1,13 @@
 /*  Created by IntelliJ IDEA.
  *  User: Vinay Yadav
- *  Date: 22/08/20
- *  Time: 1:16 PM
- *  File Name : Library.java
+ *  File Name : Book.java
  * */
 package book;
 
 import java.util.Objects;
 
 public class Book {
-    private int isbn;
+    private int thirteenDigitISBNBookNumber;
     private String bookName;
     private String authorName;
 
@@ -25,26 +23,26 @@ public class Book {
     public void setAuthorName(String authorName) {
         this.authorName = authorName;
     }
-    public int getIsbn() {
-        return isbn;
+    public int getThirteenDigitISBNBookNumber() {
+        return thirteenDigitISBNBookNumber;
     }
-    public void setIsbn(int isbn) {
-        this.isbn = isbn;
+    public void setThirteenDigitISBNBookNumber(int thirteenDigitISBNBookNumber) {
+        this.thirteenDigitISBNBookNumber = thirteenDigitISBNBookNumber;
     }
 
     public Book(String authorName) {
         this.authorName = authorName;
     }
-    public Book(String authorName, String bookName, int isbn) {
+    public Book(String authorName, String bookName, int thirteenDigitISBNBookNumber) {
         this.authorName = authorName;
         this.bookName = bookName;
-        this.isbn = isbn;
+        this.thirteenDigitISBNBookNumber = thirteenDigitISBNBookNumber;
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "isbn=" + isbn +
+                "isbn=" + thirteenDigitISBNBookNumber +
                 ", bookName='" + bookName + '\'' +
                 ", authorName='" + authorName + '\'' +
                 '}';
@@ -55,14 +53,14 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return getIsbn() == book.getIsbn() &&
+        return getThirteenDigitISBNBookNumber() == book.getThirteenDigitISBNBookNumber() &&
                 Objects.equals(getBookName(), book.getBookName()) &&
                 Objects.equals(getAuthorName(), book.getAuthorName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getIsbn(), getBookName(), getAuthorName());
+        return Objects.hash(getThirteenDigitISBNBookNumber(), getBookName(), getAuthorName());
     }
 }
 
